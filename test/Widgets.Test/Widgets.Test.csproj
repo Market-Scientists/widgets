@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Widgets\Widgets\Widgets.csproj" />
+    <ProjectReference Include="..\..\src\Widgets\Widgets.csproj" />
   </ItemGroup>
 
 </Project>
