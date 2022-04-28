@@ -1,0 +1,31 @@
+name: Widgets - Release
+
+on:
+  workflow_run:
+    workflows: ["Widgets - CI"]
+    branches: [ master ]
+    types:
+      - completed
+
+jobs:
+  publish-nuget:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: ./src
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+      working-directory: ./src
+    - name: Publish to NuGet
+      uses: brandedoutcast/publish-nuget@v2
+      with:
+        PROJECT_FILE_PATH: src/MarketScientists.Widgets/MarketScientists.Widgets.csproj
+        VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
+        TAG_FORMAT: '*'
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
