@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Widgets", "Widgets\Widgets.csproj", "{CC49F712-32C8-4F66-A1D9-75572BF62399}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Widgets.Test", "..\..\test\Widgets.Test\Widgets.Test.csproj", "{B8427DB2-9373-4065-9507-E11635E586BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CC49F712-32C8-4F66-A1D9-75572BF62399}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC49F712-32C8-4F66-A1D9-75572BF62399}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC49F712-32C8-4F66-A1D9-75572BF62399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8427DB2-9373-4065-9507-E11635E586BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8427DB2-9373-4065-9507-E11635E586BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8427DB2-9373-4065-9507-E11635E586BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8427DB2-9373-4065-9507-E11635E586BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
