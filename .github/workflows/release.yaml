@@ -25,5 +25,4 @@ jobs:
       run: dotnet build --configuration Release --no-restore
       working-directory: ./src
     - name: Publish to NuGet
-    - name: Publish to GitHub packages 
       run: dotnet nuget push /src/Widgets/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
