@@ -25,9 +25,5 @@ jobs:
       run: dotnet build --configuration Release --no-restore
       working-directory: ./src
     - name: Publish to NuGet
-      uses: rohith/publish-nuget@v2
-      with:
-        PROJECT_FILE_PATH: src/Widgets/Widgets.csproj
-        VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
-        TAG_FORMAT: '*'
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    - name: Publish to GitHub packages 
+      run: dotnet nuget push /src/Widgets/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
