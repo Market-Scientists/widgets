@@ -6,7 +6,9 @@ on:
     branches: [ main ]
     types:
       - completed
-
+    paths:
+      - 'src/Widgets/**'
+      - 'src/Widgets.Abstractions/**'
 jobs:
   publish-nuget:
     runs-on: ubuntu-latest
@@ -23,7 +25,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
       working-directory: ./src
     - name: Publish to NuGet
-      uses: brandedoutcast/publish-nuget@v2
+      uses: rohith/publish-nuget@v2
       with:
         PROJECT_FILE_PATH: src/Widgets/Widgets.csproj
         VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
