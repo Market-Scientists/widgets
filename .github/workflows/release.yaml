@@ -3,7 +3,7 @@ name: Widgets - Release
 on:
   workflow_run:
     workflows: ["Widgets - CI"]
-    branches: [ master ]
+    branches: [ main ]
     types:
       - completed
 
