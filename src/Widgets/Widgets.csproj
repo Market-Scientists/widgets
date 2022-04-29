@@ -12,7 +12,7 @@
 
   <PropertyGroup>
 	  <PackageId>MarketScientists.Widgets</PackageId>
-	  <PackageVersion>1.0.0</PackageVersion>
+	  <PackageVersion>1.0.1</PackageVersion>
 	  <Authors>Marcel Galovič</Authors>
 	  <Company>Market Scientists</Company>
 	  <Title>Widgets</Title>
