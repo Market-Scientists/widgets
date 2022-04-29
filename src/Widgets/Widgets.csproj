@@ -6,8 +6,11 @@
 	  <AssemblyName>MarketScientists.Widgets</AssemblyName>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
-	  <PackOnBuild>true</PackOnBuild>
 	  <OutputType>Library</OutputType>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
 	  <PackageId>MarketScientists.Widgets</PackageId>
 	  <PackageVersion>1.0.0</PackageVersion>
 	  <Authors>Marcel Galovič</Authors>
@@ -17,9 +20,15 @@
 	  <RepositoryUrl>https://github.com/Market-Scientists/widgets</RepositoryUrl>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <IsPackable>true</IsPackable>
+	  <PackOnBuild>true</PackOnBuild>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+
+	<ItemGroup>
     <ProjectReference Include="..\Widgets.Abstractions\Widgets.Abstractions.csproj" />
   </ItemGroup>
 
