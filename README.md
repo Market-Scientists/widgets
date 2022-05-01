@@ -5,4 +5,4 @@
 Widgets abstractions, implementations, tests and viewer
 
 ## Related projects
-[services-interfaces](https://github.com/Market-Scientists/services-interfaces) - abstractions of used services by widgets
+[services](https://github.com/Market-Scientists/services) - services used by widgets
