@@ -12,7 +12,11 @@ jobs:
     outputs: 
       src: ${{ steps.filter.outputs.src }}
     steps:
-    - uses: dorny/paths-filter@v2
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Check for changes
+      uses: dorny/paths-filter@v2
       id: filter
       with:
         filters: |
@@ -24,17 +28,22 @@ jobs:
     if: ${{ needs.changes.outputs.src == 'true' }}
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout source code
     - uses: actions/checkout@v2
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '6.0.x'
+    
     - name: Install dependencies
       run: dotnet restore
       working-directory: ./src
+    
     - name: Build
       run: dotnet build --configuration Release --no-restore
       working-directory: ./src
+    
     - name: Publish to NuGet
       run: dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
       working-directory: ./src/Widgets/bin/Release
