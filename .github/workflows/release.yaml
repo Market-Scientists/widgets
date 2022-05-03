@@ -6,10 +6,22 @@ on:
     branches: [ main ]
     types:
       - completed
-    paths:
-      - './src/**'
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs: 
+      src: ${{ steps.filter.outputs.src }}
+    steps:
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          src:
+            - 'src/**'
+
   publish-nuget:
+    needs: changes
+    if: ${{ needs.changes.outputs.src == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
