@@ -7,8 +7,7 @@ on:
     types:
       - completed
     paths:
-      - 'src/Widgets/**'
-      - 'src/Widgets.Abstractions/**'
+      - './src/**'
 jobs:
   publish-nuget:
     runs-on: ubuntu-latest
